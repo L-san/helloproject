@@ -8,19 +8,16 @@
 
 name: Java CI with Maven
 
-on:
-  pull_request_target:
-    branches: [ "master" ]
+on: pull_request_target
 
 jobs:
 
-  autoapproval:
+  auto-approve:
     runs-on: ubuntu-latest
-    name: Autoapproval
+    permissions:
+      pull-requests: write
     steps:
-    - uses: hmarr/auto-approve-action@v4.0.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: hmarr/auto-approve-action@v4
         
   build:
     runs-on: ubuntu-latest
