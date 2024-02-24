@@ -28,10 +28,10 @@ jobs:
     - uses: actions/checkout@v3
           
     - name: Set up JDK
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
-          java-version: '8'
-          distribution: 'adopt'
+          java-version: '17'
+          distribution: 'temurin'
                            
     - name: Run Test
       if: always()
